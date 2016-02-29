@@ -155,7 +155,7 @@ y_train <- as.data.frame(read.table('y_train.txt',  stringsAsFactors = F))
 
  
     # replace the column names to reflect the fact that the means have been taken for those columns
-    for(n in 1: length(names(Means_of_all_activity))){
+    for(n in 6: length(names(Means_of_all_activity))){
       
       names(Means_of_all_activity)[n] <- paste('Means of ',  names(Means_of_all_activity)[n])
     }
