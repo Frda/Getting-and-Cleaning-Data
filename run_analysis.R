@@ -6,14 +6,14 @@
 # require dplyr
 
 library(dplyr)
-
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", dest="results.zip", mode="wb")
+unzip("results.zip", exdir = working_dir, junkpaths = TRUE)
 
 ##################################################### code to merge and clean Trainning DataSet###########################
 # this section of code is used to extract and prepare files needed for modifying column names in the tranning dataset and test
 #test dataset
 
-#set working directory to main folder
-setwd('C:\\Users\\1\\Downloads\\getdata-projectfiles-UCI HAR Dataset (1)\\UCI HAR Dataset')
+
 
 #import features file this file contains header descriptions for train file. 
 features <- as.data.frame(read.table('features.txt',  stringsAsFactors = F))
@@ -37,8 +37,7 @@ names(activity_labels) <- c('ActivityKey', 'ActivityValue')
 
 
 
-#set working directory of trainning set 
-  setwd('C:\\Users\\1\\Downloads\\getdata-projectfiles-UCI HAR Dataset (1)\\UCI HAR Dataset\\train')
+
 
 #import x_train file this file contains information measuments for activities
 X_train <-as.data.frame( read.table('X_train.txt',  stringsAsFactors = F))
@@ -90,9 +89,7 @@ y_train <- as.data.frame(read.table('y_train.txt',  stringsAsFactors = F))
     ##################################################### code to merge and clean test DataSet###########################
     
     
-    
-    #set working directory of trainning set 
-    setwd('C:\\Users\\1\\Downloads\\getdata-projectfiles-UCI HAR Dataset (1)\\UCI HAR Dataset\\test')
+
     
     #import x_train file this file contains information measuments for activities
     X_test <-as.data.frame( read.table('X_test.txt',  stringsAsFactors = F))
